@@ -1,0 +1,9 @@
+Primary Colors (from the logo):
+*Soft Blue (#93a9c5) - From the graduation cap
+*Deep Blue (#465b7b) - From the "Future" text
+*Grayish Blue (#8c9cb2) - From the tassel and border elements
+Supporting Colors:
+Light Gray (#f0f2f5) - For backgrounds or section dividers
+Slate Gray (#788898) - For buttons or accent elements
+*Steel Blue (#6687a6) - For links or secondary headings
+

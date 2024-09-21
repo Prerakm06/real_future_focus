@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            {% for testimonial in testimonials_list %}
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="testimonial-card position-relative text-center p-4">
+                        <img src="{{ testimonial.pfp_url }}" alt="Profile picture of {{ testimonial.name }}" class="img-fluid rounded-circle mb-3 pfp-image">
+                        <h3 class="testimonial-name">{{ testimonial.name }}</h3>
+                        <p class="testimonial-role">{{ testimonial.role }}</p>
+                        <p class="testimonial-quote">"{{ testimonial.quote }}"</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <style>
+        body {
+            background-color: #93a9c5; /* Light background for contrast */
+            font-family: 'Poppins', sans-serif; /* Keep existing font */
+        }
+
+        .testimonial-card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding-bottom: 30px; /* Adjusted for better spacing */
+        }
+
+        .testimonial-card:hover {
+            transform: scale(1.03); /* Slight zoom on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+        }
+
+        .pfp-image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .testimonial-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-role {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px; /* Adjusted spacing */
+        }
+
+        .testimonial-quote {
+            font-size: 1.1rem;
+            color: #444;
+            font-style: italic;
+            padding: 0 10px;
+        }
+
+    </style>
+{% endblock content %}

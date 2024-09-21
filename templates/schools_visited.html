@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="container-fluid">
+        {% for school in schools %}
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="school-card position-relative">
+                        <img src="{{ school.image_url }}" alt="{{ school.name }} Image" class="img-fluid w-100">
+                        <div class="school-name-overlay">
+                            <h2 class="school-name">{{ school.name }}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <style>
+        body {
+            background-color: #93a9c5; /* Background color of the webpage */
+            font-family: 'Poppins', sans-serif; /* Apply Poppins font to the entire page */
+        }
+
+        .school-card {
+            position: relative;
+            overflow: hidden; /* Ensure children elements respect the border radius */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transform and shadow changes */
+            border-radius: 15px; /* Add curved edges */
+            animation: fadeIn .25s ease-out; /* Fade-in animation */
+        }
+
+        .school-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            filter: brightness(60%); /* Darken the image for contrast */
+            border-radius: 15px; /* Add curved edges */
+            opacity: 0; /* Start with opacity 0 */
+            animation: fadeInImage .25s forwards; /* Fade-in image animation */
+        }
+
+        .school-name-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0; /* Start with opacity 0 */
+            animation: fadeInOverlay 0.5s 0.25s forwards; /* Fade-in overlay animation */
+        }
+
+        .school-name {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            margin: 0;
+            opacity: 0; /* Start with opacity 0 */
+            animation: fadeInText .25s .25s forwards; /* Fade-in text animation */
+        }
+
+        .school-card:hover {
+            transform: scale(1.05); /* Zoom-in effect */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow effect */
+        }
+
+        @media (max-width: 768px) {
+            .school-name {
+                font-size: 1.5rem;
+            }
+
+            .school-card img {
+                height: 200px;
+            }
+        }
+
+        /* Keyframes for animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInImage {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInOverlay {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInText {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+{% endblock content %}

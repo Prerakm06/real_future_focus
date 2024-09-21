@@ -1,0 +1,229 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Future Focus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #93a9c5; /* Light background color for overall page */
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Mission, Vision, Values Section */
+        .mission-statement-section {
+            background-color: #e0e8f5;
+            border-radius: 25px;
+            padding: 60px 0;
+            margin: 50px auto;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for organic feel */
+        }
+
+        .mission-item {
+            width: 30%;
+            display: inline-block;
+            margin: 0 15px;
+            vertical-align: top;
+        }
+
+        .mission-img {
+            width: 50%; /* Adjusting the icon size */
+            max-width: 120px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Adding shadow for image pop */
+            padding: 20px; /* Adding padding around the icon for a larger box */
+            background-color: #ffffff; /* Background for the box around the icon */
+        }
+
+        .mission-header {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #023e8a;
+            margin-top: 20px;
+        }
+
+        .mission-text {
+            font-size: 1rem;
+            color: #023e8a;
+            margin-top: 10px;
+        }
+
+        /* Meet the Team Section */
+        .about-us-section {
+            background-color: #ffffff;
+            border-radius: 25px;
+            padding: 50px 0;
+            margin: 50px auto;
+            width: 90%; /* Match width with the mission statement section */
+            text-align: center;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for clean effect */
+        }
+
+        .about-header {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #023e8a;
+            margin-bottom: 40px;
+        }
+
+        .team-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: nowrap; /* No wrapping to keep members on the same line */
+            overflow-x: auto; /* Enable horizontal scrolling if needed */
+        }
+
+        .team-member-card {
+            background-color: #f5f5f5;
+            border-radius: 25px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for cleaner look */
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 250px;
+            position: relative;
+        }
+
+        .team-member-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Smooth hover effect */
+        }
+
+        .team-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333333;
+            margin-top: 10px;
+        }
+
+        .team-role {
+            font-size: 1.2rem;
+            color: #0077b6;
+            margin-bottom: 10px;
+        }
+
+        .team-desc {
+            font-size: 0.9rem;
+            color: #555555;
+            margin-top: 10px;
+        }
+
+        .team-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        /* Photo Collage Section */
+        .photo-collage-section {
+            background-color: #f0f4fa;
+            padding: 50px 0;
+            margin: 50px auto;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 25px;
+        }
+
+        .collage-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .collage-img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Padding to ensure the bottom of the page doesn't touch */
+        body, html {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+        }
+
+        .about-us-section {
+            margin-bottom: 50px; /* Adding space from the bottom */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Mission Statement Section -->
+    <section class="mission-statement-section">
+        <div class="mission-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/561/561094.png" alt="Vision Image" class="mission-img">
+            <h3 class="mission-header">VISION</h3>
+            <p class="mission-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="mission-item">
+            <img src="https://uxwing.com/wp-content/themes/uxwing/download/seo-marketing/target-icon.png" alt="Mission Image" class="mission-img">
+            <h3 class="mission-header">MISSION</h3>
+            <p class="mission-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="mission-item">
+            <img src="https://cdn-icons-png.freepik.com/512/3362/3362061.png" class="mission-img">
+            <h3 class="mission-header">VALUES</h3>
+            <p class="mission-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-us-section">
+        <h2 class="about-header">Meet the Team</h2>
+        <div class="team-container">
+            <div class="team-member-card">
+                <img src="static\prerak.png" alt="Team Member 1" class="team-img">
+                <h3 class="team-name">Prerak Mahajan</h3>
+                <p class="team-role">Founder</p>
+                <p class="team-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget lacus felis.</p>
+            </div>
+            <div class="team-member-card">
+                <img src="static\neomi.png" alt="Team Member 2" class="team-img">
+                <h3 class="team-name">Neomi Bardoliwala</h3>
+                <p class="team-role">Vice President of Marketing</p>
+                <p class="team-desc">Curabitur ac odio eget metus auctor accumsan. Integer aliquet enim nunc.</p>
+            </div>
+            <div class="team-member-card">
+                <img src="static\harshel.png" alt="Team Member 3" class="team-img">
+                <h3 class="team-name">Harshel Patel</h3>
+                <p class="team-role">Vice President of Outreach</p>
+                <p class="team-desc">Vivamus suscipit, mauris nec eleifend vehicula, justo arcu ullamcorper turpis.</p>
+            </div>
+            <div class="team-member-card">
+                <img src="static\zenya.png" alt="Team Member 4" class="team-img">
+                <h3 class="team-name">Zenya Biviji</h3>
+                <p class="team-role">Vice President of Education</p>
+                <p class="team-desc">Nunc posuere lorem vitae sem malesuada, nec venenatis enim interdum.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Collage Section -->
+    <section class="photo-collage-section">
+        <h2 class="about-header">Our Adventures</h2>
+        <div class="collage-container">
+            <img src="static\futurefocus_team1.JPG" alt="Adventure Photo 1" class="collage-img">
+            <img src="static\futurefocus_team2.JPG" alt="Adventure Photo 2" class="collage-img">
+            <img src="static\futurefocus_team3.JPG" alt="Adventure Photo 3" class="collage-img">
+            <img src="static\futurefocus_team4.JPG" alt="Adventure Photo 4" class="collage-img">
+
+        </div>
+    </section>
+
+</body>
+</html>
+{% endblock %}
