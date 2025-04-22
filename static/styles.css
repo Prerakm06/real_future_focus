@@ -5,56 +5,109 @@
     backdrop-filter: blur(10px); /* Glass effect */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
     transition: background 0.3s, box-shadow 0.3s;
-  }
+}
   
-  .navbar-brand {
+.navbar-brand {
     margin-right: 2rem; /* Larger gap between logo and links */
-  }
+}
   
-  .navbar-brand img {
+.navbar-brand img {
     display: block;
     max-width: 100px;
     height: auto;
     transition: transform 0.3s;
-  }
+}
   
-  .navbar-brand img:hover {
+.navbar-brand img:hover {
     transform: scale(1.1); /* Slight zoom effect */
-  }
+}
   
-  .navbar-nav {
+.navbar-nav {
     display: flex;
     align-items: center;
-  }
+}
   
-  .navbar-nav .nav-item {
+.navbar-nav .nav-item {
     margin: 0 0.5rem; /* Smaller gap between navigation links */
-  }
+}
   
-  .navbar-nav .nav-link {
+.navbar-nav .nav-link {
     font-family: 'Segoe UI', sans-serif; /* Clean font */
     font-size: 1rem; /* Adjusted font size */
     font-weight: 600;
     color: #465b7b;
     transition: color 0.3s, transform 0.3s;
-  }
+}
   
-  .navbar-nav .nav-link:hover {
+.navbar-nav .nav-link:hover {
     color: #007bff; /* Blue color on hover */
     transform: translateY(-3px); /* Subtle lift effect */
-  }
+}
   
-  .navbar-toggler {
+.navbar-toggler {
     border-color: #007bff;
-  }
+}
   
-  .navbar-toggler:hover {
+.navbar-toggler:hover {
     background-color: #007bff;
     color: #fff; /* White color for the toggler icon */
-  }
+}
   
-  body {
+body {
     margin: 0;
     padding: 0;
-  }
-  
+}
+
+/* Custom CSS for the footer */
+/* Custom CSS for the footer */
+/* Custom CSS for the footer */
+/* Custom CSS for the footer */
+/* Custom CSS for the footer */
+.custom-footer {
+  background: rgba(246,246,246, 0.8); /* Transparent white background matching header */
+  padding: 0.5rem 0; /* Slimmer padding for thinner footer */
+  backdrop-filter: blur(10px); /* Glass effect for consistency */
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+  font-family: 'Segoe UI', sans-serif; /* Match the font style with header */
+  color: #465b7b;
+}
+
+.custom-footer a {
+  color: #465b7b;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.custom-footer a:hover {
+  color: #007bff; /* Blue on hover for consistency */
+}
+
+.custom-footer .text-center {
+  text-align: center;
+}
+
+.custom-footer .container {
+  max-width: 960px; /* Ensure the footer is not too wide */
+}
+
+.custom-footer .row {
+  justify-content: center; /* Center content */
+  align-items: center;
+}
+
+.custom-footer .col-md-12 {
+  margin-bottom: 0.5rem; /* Space between columns */
+  text-align: center; /* Center text in columns */
+}
+
+.custom-footer img {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.5rem; /* Space between the icons */
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.custom-footer img:hover {
+  transform: scale(1.2); /* Pop-out effect on hover */
+  filter: brightness(1.2); /* Brightens the icon slightly */
+}

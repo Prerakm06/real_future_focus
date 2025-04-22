@@ -14,9 +14,9 @@ def unlock_insights():
 @app.route("/testimonials")
 def testimonials():
     testimonials_list=[
-    {'name': 'Ms. Smith', 'pfp_url': 'https://preview.redd.it/oqhs74f166511.png?width=640&crop=smart&auto=webp&s=e768a28eb87cd18177ca17d08daeb3317ae7d3f4', 'quote': 'An exceptional student with a passion for innovation.','role':"Alloa Principal"},
-    {'name': 'Mr. Johnson', 'pfp_url': 'https://media.licdn.com/dms/image/v2/D5612AQHV7OQuC-dRvQ/article-inline_image-shrink_400_744/article-inline_image-shrink_400_744/0/1709355461942?e=1732147200&v=beta&t=U3Ktgrlt7Yuq-sbwsBHWhlKIY8KdHJXcZCRcc_6AbYQ', 'quote': 'A dedicated learner who excels in problem-solving.','role':"Fletcher's Meadow Principal"},
-    {'name': 'Ms. Smith', 'pfp_url': 'https://preview.redd.it/oqhs74f166511.png?width=640&crop=smart&auto=webp&s=e768a28eb87cd18177ca17d08daeb3317ae7d3f4', 'quote': 'An exceptional student with a passion for innovation.','role':"Alloa Principal"},
+    {'name': 'Ms. Smith', 'pfp_url': 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png', 'quote': 'An exceptional student with a passion for innovation.','role':"Alloa Principal"},
+    {'name': 'Mr. Johnson', 'pfp_url': 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png', 'quote': 'A dedicated learner who excels in problem-solving.','role':"Fletcher's Meadow Principal"},
+    {'name': 'Ms. Smith', 'pfp_url': 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png', 'quote': 'An exceptional student with a passion for innovation.','role':"Alloa Principal"},
     ]
     return render_template('testimonials.html', title='Testimonials', testimonials_list=testimonials_list)
 
@@ -31,8 +31,9 @@ def about_us():
 def schools_visited():
     schools = [
         {'name': 'Alloa Public School', 'image_url': 'https://alloa.peelschools.org/images/324ee78d-1cae-41b4-b138-ad8c416cd763'},
-    
+        {'name': 'Cheyne Middle School', 'image_url': 'https://cheyne.peelschools.org/images/2c4d75c1-6919-421e-b9db-0f1ec78f06bd'}
     ]
+    
     return render_template('schools_visited.html', title='Schools Visited', schools=schools)
 
 if __name__ == '__main__':
