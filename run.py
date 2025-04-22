@@ -39,4 +39,4 @@ def schools_visited():
 if __name__ == '__main__':
     app.run()
 
-print("Helolo")
+print("Hello")
