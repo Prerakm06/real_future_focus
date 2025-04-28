@@ -1,4 +1,129 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h1>Unlock Insights</h1>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="form-card p-4">
+                <h1 class="text-center mb-4">Unlock Insights</h1>
+
+                <form method="POST" class="needs-validation" novalidate>
+
+                    <div class="mb-3">
+                        <label for="field_of_interest" class="form-label">Field of Interest</label>
+                        <select class="form-select" id="field_of_interest" name="field_of_interest" required>
+                            <option value="" disabled selected>Select your field</option>
+                            {% for field in fields %}
+                                <option value="{{ field }}">{{ field }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="first_major" class="form-label">First Major Choice</label>
+                        <select class="form-select" id="first_major" name="first_major" required>
+                            <option value="" disabled selected>Select first major</option>
+                            {% for major in majors %}
+                                <option value="{{ major }}">{{ major }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="second_major" class="form-label">Second Major Choice</label>
+                        <select class="form-select" id="second_major" name="second_major" required>
+                            <option value="" disabled selected>Select second major</option>
+                            {% for major in majors %}
+                                <option value="{{ major }}">{{ major }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="first_hobby" class="form-label">First Hobby Interest</label>
+                        <select class="form-select" id="first_hobby" name="first_hobby" required>
+                            <option value="" disabled selected>Select first hobby</option>
+                            {% for activity in activities %}
+                                <option value="{{ activity }}">{{ activity }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="second_hobby" class="form-label">Second Hobby Interest</label>
+                        <select class="form-select" id="second_hobby" name="second_hobby" required>
+                            <option value="" disabled selected>Select second hobby</option>
+                            {% for activity in activities %}
+                                <option value="{{ activity }}">{{ activity }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="first_subject" class="form-label">First Strong School Subject</label>
+                        <select class="form-select" id="first_subject" name="first_subject" required>
+                            <option value="" disabled selected>Select first strong subject</option>
+                            {% for subject in subjects %}
+                                <option value="{{ subject }}">{{ subject }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="second_subject" class="form-label">Second Strong School Subject</label>
+                        <select class="form-select" id="second_subject" name="second_subject" required>
+                            <option value="" disabled selected>Select second strong subject</option>
+                            {% for subject in subjects %}
+                                <option value="{{ subject }}">{{ subject }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: #93a9c5; /* Matches your other pages */
+        font-family: 'Poppins', sans-serif; /* Consistent font */
+    }
+
+    .form-card {
+        background-color: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        animation: fadeIn .5s ease-out;
+    }
+
+    h1 {
+        font-weight: 600;
+    }
+
+    .btn-primary {
+        background-color: #4f74b0;
+        border-color: #4f74b0;
+        font-weight: 600;
+        padding: 10px 30px;
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background-color: #3c5a92;
+        border-color: #3c5a92;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+
 {% endblock content %}

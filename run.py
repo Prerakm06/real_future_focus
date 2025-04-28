@@ -1,15 +1,74 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__,template_folder='templates')
+
+fields = sorted([
+    "Medicine/Healthcare",
+    "Engineering/Technology",
+    "Business/Finance",
+    "Education",
+    "Arts/Entertainment",
+    "Law/Public Policy",
+    "Science/Research",
+    "Social Services",
+    "Environmental Science"
+])
+
+majors = sorted([
+    "Accounting", "Aerospace Engineering", "Astronomy", "Biochemistry", "Biology", 
+    "Business Administration", "Chemistry", "Civil Engineering", "Computer Science", 
+    "Creative Writing", "Criminal Justice", "Economics", "Education", "Electrical Engineering", 
+    "Early Childhood Ed", "Entrepreneurship", "Environmental Science", "English", "Film Studies", 
+    "Finance", "Fine Arts", "Geology", "Graphic Design", "International Relations", "Law", 
+    "Marketing", "Mechanical Engineering", "Music", "Nursing", "Photography", "Physics", 
+    "Political Science", "Pre-Med", "Public Health", "Public Policy", "Robotics Engineering", 
+    "Social Work", "Sociology", "Special Education", "Theater Arts"
+])
+
+activities = sorted([
+    "Acting", "Astronomy", "Birdwatching", "Budgeting", "Building Circuits", 
+    "Building Models", "Chess", "Coding", "Creative Writing", "Debate", 
+    "Digital Art", "Filmmaking", "Gardening", "Hiking", "Photography", 
+    "Playing Guitar", "Public Speaking", "Reading", "Rock Collecting", 
+    "Running", "Social Media", "Stargazing", "Stock Trading", "Swimming", 
+    "Tutoring", "Video Games", "Volunteering", "Writing"
+])
+
+subjects = sorted([
+    "Art", "Biology", "Chemistry", "Computer Science", "Economics", "English",
+    "History", "Math", "Music", "Physics", "Psychology", "Sociology"
+])
 
 @app.route("/")
 @app.route("/home")
 def home():
     return render_template('startup.html', title='Future Focus')
 
-@app.route("/unlock_insights")
+@app.route("/unlock_insights", methods=["GET", "POST"])
 def unlock_insights():
-    return render_template('unlock_insights.html', title='Unlock Insights')
+    if request.method == "POST":
+        # Here you can process the form data
+        field_of_interest = request.form.get("field_of_interest")
+        first_major = request.form.get("first_major")
+        second_major = request.form.get("second_major")
+        first_hobby = request.form.get("first_hobby")
+        second_hobby = request.form.get("second_hobby")
+        first_subject = request.form.get("first_subject")
+        second_subject = request.form.get("second_subject")
+
+        # Example: just print (later you will pass it to your ML model)
+        print(field_of_interest, first_major, second_major, first_hobby, second_hobby, first_subject, second_subject)
+
+        # Redirect or render a success page later
+        return redirect(url_for('unlock_insights'))  
+
+    return render_template(
+        "unlock_insights.html",
+        fields=fields,
+        majors=majors,
+        activities=activities,
+        subjects=subjects
+    )
 
 @app.route("/testimonials")
 def testimonials():
